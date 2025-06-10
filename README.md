@@ -8,7 +8,7 @@
 
 ### IP
 
-`(Internet Protocol)` es la dirección que identifica cada dispositivo conectadodo a Internet.
+`(Internet Protocol)` es la dirección que identifica cada dispositivo conectado a Internet.
 
 ## API (Application Programming Interface)
 
@@ -83,3 +83,47 @@ Los codigos de estado identifican el resultado de la respuesta entregada por el 
 - **400:** Bad request
 - **404:** Not found
 - **500:** Internal server error
+
+## Tipos de APIs (REST & GraphQL)
+
+### RESTful APIs
+
+`REST (Representational State Transfer)`, sigue un ennfoque donde el cliente interactua con los recursos utilizando `URLs` y metodos HTTP estandar como `GET` o `POST`.
+
+#### Stateless
+
+Cada peticion es independiente y no se relaciona con las anteriores.
+
+### GraphQL APIs
+
+En lugar de utilizar multiples endpoints para obtener los datos, se utiliza un unico endpoint `/graphql`.
+
+## Bases de datos
+
+Sistema encargado de almacenar y manejar datos.
+
+### Bases de datos relacionales
+
+La información es almacenada mediante tablas, estructuradas por filas y columnas.
+
+#### SQL (Structured Query Language)
+
+Lenguaje que permite consultar y manipular datos.
+
+```sql
+select * from users;
+```
+
+### Bases de datos no relacionales (NoSQL)
+
+La información puede ser almacenada mediante objetos JSON `(MongoDB)` o mediante pares clave-valor `(Redis)`.
+
+#### ORM (Object Relational Mappers)
+
+Simplifican la interaccion con una base de datos, permitiendo definir consultas utilizando la sintaxis de un lenguaje de programacion especifico.
+
+- Bases de datos relacionales
+    - Prisma
+
+- Bases de datos no relacionales
+    - mongoose
