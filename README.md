@@ -127,3 +127,26 @@ Simplifican la interaccion con una base de datos, permitiendo definir consultas 
 
 - Bases de datos no relacionales
     - mongoose
+
+## Arquitectura del backend
+
+Diseño y estructura de la aplicacion.
+
+### Arquitectura monolitica
+
+Todos los componentes de la aplicacion son combinados dentro de una base de codigo unificada.
+
+En  este tipo de arquitectura el backend se encarga de todo, manejo de la logica de negocio y las interacciones con la base de datos.
+
+- Simple de desarrollar y desplegar.
+- Facil de depurar ya que todo se encuentra en un solo lugar.
+
+### Arquitectura de microservicios
+
+La aplicacion e dividida en pequños servicios, y cada servicio se encarga de manejar una funcion especifica, como autenticacion, pagos o notificaciones.
+
+Cada microservicio se comunica con los demas utilizandos API.
+
+### Serverless (arquitectura sin servidor)
+
+Un proveedor en la nube como `AWS`, se encarga de manejar, provisionar, escalar y manejar el servidor.
