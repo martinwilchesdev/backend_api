@@ -1,4 +1,6 @@
-### Inicializacion del proyecto (no frontend)
+## Inicializacion del proyecto (no frontend)
+
+### express.js
 
 ```bash
 npx express-generator --no-view
@@ -19,3 +21,15 @@ npx eslint --init
 ```
 
 > configuracion de las reglas bases de manera guiada
+
+## MongoDB
+
+```bash
+npm install mongodb
+```
+
+### mongoose
+
+```bash
+npm install mongoose
+```
