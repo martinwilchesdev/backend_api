@@ -49,7 +49,6 @@ const subscriptionSchema = mongoose.Schema({
     },
     renewalDate: {
         type: Date,
-        required: true,
         validate: {
             validator: function(value) {
                 return value > this.startDate
@@ -64,6 +63,29 @@ const subscriptionSchema = mongoose.Schema({
         index: true
     }
 }, options: { timestamps: true })
+
+// funcion que se ejecuta antes de que se cree un nuevo documento
+subscriptionSchema.pre('save', function(next) {
+    if (!this.renewalDate) {
+        const renewalDates = {
+            daily: 1,
+            weekly: 7,
+            monthly: 30,
+            yearly: 365,
+        }
+
+        // calcular la fecha de renovacion si no esta especificada
+        this.renewalDate =  new Date(this.startDate)
+        this.renewalDate.setDate(this.renewalDate.getDate() + renewalDates[this.frequency])
+    }
+
+    // actualizar el estado de la subscripcion a `expired` en caso de que se haya vencido
+    if (this.renewalDate < new Date()) {
+        this.status = 'expired'
+    }
+
+    next()
+})
 
 const Subscription = mongoose.model('Subscription', subscriptionSchema)
 
