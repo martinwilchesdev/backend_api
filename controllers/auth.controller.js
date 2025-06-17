@@ -21,7 +21,7 @@ export const signUp = async (req, res, next) => {
         if (existingUser) {
             const error = new Error('User already exists')
             error.statusCode = 409
-            throw(error)
+            throw error
         }
 
         // encriptar la contraseña
@@ -66,7 +66,7 @@ export const signIn = async (req, res, next) => {
         if (!user) {
             const error = new Error('Uset not registered')
             error.statusCode = 404
-            throw(error)
+            throw error
         }
 
         // validar mediante el metodo `compare` que la contraseña encriptada y la contraseña recibida en la request sean iguales
@@ -75,7 +75,7 @@ export const signIn = async (req, res, next) => {
         if (!validateUser) {
             const error = new Error('Invalid password')
             error.statusCode = 401
-            throw(error)
+            throw error
         }
 
         // token de autenticacion

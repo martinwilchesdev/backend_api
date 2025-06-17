@@ -5,7 +5,7 @@
 const errorMiddleware = (err, req, res, next) => {
     try {
         let error = { ...err }
-        // error.message = err.message
+        error.message = err.message // mensaje de error personalizado
 
         // Mongoose bad ObjectId
         if (err.name === 'CastError') {
