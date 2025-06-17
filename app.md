@@ -45,10 +45,10 @@ const userSchema = mongoose.Schema({
     name: {
         type: String
     }
-}, options: {timestamps: true})
+}, {timestamps: true})
 ```
 
-> `options: {timestamps: true}` permite definir de forma las propiedades `created_at` y `updated_at` para el documento.
+> `{timestamps: true}` permite definir de forma automatica las propiedades `created_at` y `updated_at` asociadas al documento.
 
 ```javascript
 import mongoose from 'mongoose'

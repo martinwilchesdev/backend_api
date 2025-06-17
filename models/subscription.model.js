@@ -62,7 +62,7 @@ const subscriptionSchema = mongoose.Schema({
         required: true,
         index: true
     }
-}, options: { timestamps: true })
+}, { timestamps: true })
 
 // funcion que se ejecuta antes de que se cree un nuevo documento
 subscriptionSchema.pre('save', function(next) {
